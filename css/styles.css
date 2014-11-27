@@ -1,0 +1,560 @@
+
+ 
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
+/* * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3. */
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+/* * Prevents modern browsers from displaying `audio` without controls.
+* Remove excess height in iOS 5 devices. */
+audio:not([controls]) { display: none; height: 0; }
+/* * Addresses styling for `hidden` attribute not present in IE 7/8/9, Firefox 3, * and Safari 4.
+* Known issue:no IE 6 support. */
+[hidden] { display: none; }
+/* ==========================================================================
+Base
+========================================================================== */
+/* * 1. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+*    `em` units.
+* 2. Prevents iOS text size adjust after orientation change, without disabling
+*    user zoom. */
+ 
+html { font-size: 100%; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+-ms-text-size-adjust: 100%; /* 2 */ }
+html, html a { -webkit-font-smoothing: antialiased; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+/* * Addresses `font-family` inconsistency between `textarea` and other form
+* elements. */
+html, button, input, select, textarea { font-family: 'Varela Round', sans-serif; }
+/* * Addresses margins handled incorrectly in IE 6/7. */
+body { margin: 0; font-family: "Hammersmith One" , sans-serif; }
+/* ==========================================================================
+Links
+========================================================================== */
+/* * Addresses `outline` inconsistency between Chrome and other browsers. */
+ 
+a:focus { outline: thin dotted; }
+/* * Improves readability when focused and also mouse hovered in all browsers. */
+a:active, a:hover { outline: 0; }
+/* ==========================================================================
+Typography
+========================================================================== */
+/* * Addresses font sizes and margins set differently in IE 6/7.
+* Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5, * and Chrome. */
+
+h1 { font-size: 3em; color: white;}
+h2 { font-size: 1.5em; margin: 0.83em 0; }
+h3 { font-size: 1.17em; margin: 1em 0; }
+h4 { font-size: 1em; margin: 1.33em 0; }
+h5 { font-size: 0.83em; margin: 1.67em 0; }
+h6 { font-size: 0.75em; margin: 2.33em 0; }
+/* * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome. */
+abbr[title] { border-bottom: 1px dotted; }
+/* * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome. */
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+/* * Addresses styling not present in Safari 5 and Chrome. */
+dfn { font-style: italic; }
+/* * Addresses styling not present in IE 6/7/8/9. */
+mark { background: #ff0; color: #000; }
+/* * Addresses margins set differently in IE 6/7. */
+p, pre { margin: 1em 0; }
+/* * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome. */
+code, kbd, pre, samp { font-family: monospace, serif; _font-family: 'courier new', monospace; font-size: 1em; }
+/* * Improves readability of pre-formatted text in all browsers. */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+/* * Addresses CSS quotes not supported in IE 6/7. */
+q { quotes: none; }
+/* * Addresses `quotes` property not supported in Safari 4. */
+q:before, q:after { content: ''; content: none; }
+small { font-size: 75%; }
+/* * Prevents `sub` and `sup` affecting `line-height` in all browsers. */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+/* ==========================================================================
+Lists
+========================================================================== */
+/* * Addresses margins set differently in IE 6/7. */
+ 
+dl, menu, ol, ul { margin: 1em 0; }
+dd { margin: 0 0 0 40px; }
+/* * Addresses paddings set differently in IE 6/7. */
+menu, ol, ul { padding: 0 0 0 0px; }
+/* * Corrects list images handled incorrectly in IE 7. */
+nav ul, nav ol { list-style: none; list-style-image: none; }
+/* ==========================================================================
+Embedded content
+========================================================================== */
+/* * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+* 2. Improves image quality when scaled in IE 7. */
+ 
+img { border: 0; /* 1 */
+-ms-interpolation-mode: bicubic; /* 2 */ }
+/* * Corrects overflow displayed oddly in IE 9. */
+svg:not(:root) { overflow: hidden; }
+/* ==========================================================================
+Figures
+========================================================================== */
+/* * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11. */
+ 
+figure { margin: 0; }
+/* ==========================================================================
+Forms
+========================================================================== */
+/* * Corrects margin displayed oddly in IE 6/7. */
+ 
+form { margin: 0; }
+/* * Define consistent border, margin, and padding. */
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
+/* * 1. Corrects color not being inherited in IE 6/7/8/9.
+* 2. Corrects text not wrapping in Firefox 3.
+* 3. Corrects alignment displayed oddly in IE 6/7. */
+legend { border: 0; /* 1 */
+	padding: 0; white-space: normal; /* 2 */
+*margin-left: -7px; /* 3 */ }
+/* * 1. Corrects font size not being inherited in all browsers.
+* 2. Addresses margins set differently in IE 6/7, Firefox 3+, Safari 5, *    and Chrome.
+* 3. Improves appearance and consistency in all browsers. */
+button, input, select, textarea { font-size: 100%; /* 1 */
+	margin: 0; /* 2 */
+	vertical-align: baseline; /* 3 */
+*vertical-align: middle; /* 3 */ }
+/* * Addresses Firefox 3+ setting `line-height` on `input` using ` !important` in
+* the UA stylesheet. */
+button, input { line-height: normal; }
+/* * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+*    and `video` controls.
+* 2. Corrects inability to style clickable `input` types in iOS.
+* 3. Improves usability and consistency of cursor style between image-type
+*    `input` and others.
+* 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+*    Known issue:inner spacing remains in IE 6. */
+button, html input[type="button"], /* 1 */
+input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */
+	cursor: pointer; /* 3 */
+*overflow: visible; /* 4 */ }
+/* * Re-set default cursor for disabled elements. */
+button[disabled], input[disabled] { cursor: default; }
+/* * 1. Addresses box sizing set to content-box in IE 8/9.
+* 2. Removes excess padding in IE 8/9.
+* 3. Removes excess padding in IE 7.
+*    Known issue:excess padding remains in IE 6. */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+	*height: 13px; /* 3 */
+*width: 13px; /* 3 */ }
+/* * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+* 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+*    (include `-moz` to future-proof). */
+input[type="search"] { -webkit-appearance: textfield; /* 1 */
+	-moz-box-sizing: content-box; -webkit-box-sizing: content-box; /* 2 */
+box-sizing: content-box; }
+/* * Removes inner padding and search cancel button in Safari 5 and Chrome
+* on OS X. */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+/* * Removes inner padding and border in Firefox 3+. */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+/* * 1. Removes default vertical scrollbar in IE 6/7/8/9.
+* 2. Improves readability and alignment in all browsers. */
+textarea { overflow: auto; /* 1 */
+vertical-align: top; /* 2 */ }
+/* ==========================================================================
+Tables
+========================================================================== */
+/* * Remove most spacing between table cells. */
+table { border-collapse: collapse; border-spacing: 0; }
+/* ==========================================================================
+Global Styles
+========================================================================== */
+a { color: #353535; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; }
+a:hover, a:focus { color: #2A69C7; text-decoration: none; }
+p { color: white; word-spacing: 1px; line-height: 25px; font-size: 14px; }
+h2 { font-size: 15px; color: #4a4a4a; text-transform: uppercase; font-weight: bold; }
+.section-padding { padding: 90px 0 100px }
+.dark-bg { background: #f3f5f8; }
+.light-bg { background-color: #fff; }
+.dark-box { background: #f3f5f8; }
+.light-box { background-color: #fff; border: 3px solid white; display: inline-block;}
+.light-box:hover, .light-box:focus { -webkit-box-shadow: 0px 3px 0px 0px white; -moz-box-shadow: 0px 3px 0px 0px #3dc9b3; box-shadow: 0px 0px 0px 3px #F96E5B; }
+.box-hover { transition: all 500ms ease-in-out; -webkit-transition: all 500ms ease-in-out; -moz-transition: all 500ms ease-in-out; -o-transition: all 500ms ease-in-out; }
+.box-hover:hover, .box-hover:focus { transform: translate(-10px, 0); -webkit-transform: translate(-10px, 0px); -ms-transform: translate(0, -15px); }
+.wrapper { height: 650px; }
+.nopadding { padding: 0; }
+.inner { padding-top: 170px; }
+.visible{visibility: visible;}
+.hidden{visibility: hidden;}
+.loading {
+    background: url('../img/ico_loading.gif') no-repeat center center;
+}
+section {
+    opacity: 0;
+    -webkit-transition:opacity .6s;
+    -moz-transition:opacity .6s;
+    -o-transition:opacity .6s;
+    transition: opacity .6s;
+}
+.loaded section {
+    opacity: 1;
+}
+
+.text-vertical-center{
+	position: absolute;
+	top:45%;
+	right:45%;
+}
+/* ==========================================================================
+Landing Page
+========================================================================== */
+#landingpage{
+	width:100%;
+	height:100%;
+	background-color: #F96E5B; 
+}	
+.navarch{
+	background: url("../img/rectangle.png") top no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	top:0px;
+}
+.navtext{
+	font-size: 1.2em;
+	color: white;
+	margin-top: 50px;
+}
+.viewing-page-1 #navabout::after{
+	content: "";
+	width: 50px;
+	height:8px;
+	background-color: #3DC9B3;
+	position: absolute;
+	right:45%;
+	bottom:-3px;
+}
+.introtext{
+	width: 100%;
+	margin-top: 15%;
+	margin-bottom: 50px;	
+	-webkit-transition:all 1s 1s ease-in-out;
+}
+.introtext h2{
+	-webkit-transition: all 3s 3s ease-in-out;
+}
+.skill{
+
+	margin-top: 10px;
+	opacity: 0;
+	-webkit-transition:all 1s ease-in-out;
+}
+.skill p{
+	opacity: 0;
+}
+.clicked{
+	
+	width: 375px;
+	opacity: 1;
+	-webkit-animation:pulse 0.5s;
+}
+.skill img{
+	margin:0px 20px;
+}
+.loaded .introtext h2{
+    -webkit-animation:fadeIn 3s; !important;
+}
+.loaded .introtext {
+    -webkit-animation:fadeIn 2s; !important;
+}
+.loaded #design {
+    -webkit-animation:fadeIn 2s 1s forwards; !important;
+}
+.loaded #development {
+    -webkit-animation:fadeIn 2s 1.5s forwards; !important;
+}
+.loaded #strategy {
+    -webkit-animation:fadeIn 2s 2s forwards; !important;
+}
+.viewing-page-1 .navarch{
+	-webkit-animation:bounceIn 2s;
+}
+.viewing-page-1 #d1 {
+	background-color: #3DC9B3;
+}
+/* ==========================================================================
+Work
+========================================================================== */
+#work{
+	width:100%;
+	height:100%;
+	background-color: #3DC9B3;
+
+}
+.viewing-page-2 #navwork::after{
+	content: "";
+	width: 50px;
+	height:8px;
+	background-color: #B76FD3;
+	position: absolute;
+	right:45%;
+	bottom:-3px;
+}
+.circle{
+	border-radius: 100%;
+	position: absolute;
+	background-color: white;
+}
+.smallcircle{
+	-webkit-transition:all 1s 1s ease-in-out;
+}
+
+.viewing-page-2 .bigcircle {
+    -webkit-animation:bounceIn 1.5s; !important;
+}
+.viewing-page-2 .smallcircle {
+    -webkit-animation:bounceIn 1.5s 1.5s; !important;
+}
+.viewing-page-2 .navarch{
+	-webkit-animation:bounceIn 2s;
+}
+.ch-item {
+	cursor: default;
+	box-shadow: 
+		inset 0 0 0 8px white,
+		0 1px 2px rgba(0,0,0,0.1);
+		
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+
+.ch-img-1 { 
+	background-color: #4A4A4A;
+	background-size: 100%;
+}
+
+.ch-img-2 { 
+	background-color: #4A4A4A;
+	background-size: 100%;
+}
+
+.ch-img-3 { 
+	background-color: #4A4A4A;
+	background-size: 100%;
+}
+.ch-img-4 { 
+	background-color: #4A4A4A;
+	background-size: 100%;
+}
+
+.ch-img-5 { 
+	background-color: #4A4A4A;
+	background-size: 100%;
+}
+
+.ch-img-6 { 
+	background-color: #4A4A4A;
+	background-size: 100%;
+}
+.ch-info {
+	position: absolute;
+	text-align: center;
+	background: white;
+	width: inherit;
+	height: inherit;
+	border-radius: 50%;
+	opacity: 0;
+	
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+	
+	-webkit-transform: scale(0);
+	-moz-transform: scale(0);
+	-o-transform: scale(0);
+	-ms-transform: scale(0);
+	transform: scale(0);
+	
+	-webkit-backface-visibility: hidden;
+
+}
+
+.ch-info h3 {
+	color: #404040;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin: 0 auto;
+	padding: 110px 0 0 0;
+	height: 140px;
+	text-shadow: 
+		0 0 1px #fff, 
+		0 1px 2px rgba(0,0,0,0.3);
+}
+.smallcircle .ch-info h3 {
+	padding: 35px 0 0 0;
+}
+
+.ch-info p {
+	color: #404040;
+	padding: 10px 5px;
+	
+	margin: 0 30px;
+	font-size: 12px;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	opacity: 1;
+	-webkit-transition: all 1s ease-in-out 0.4s;
+	-moz-transition: all 1s ease-in-out 0.4s;
+	-o-transition: all 1s ease-in-out 0.4s;
+	-ms-transition: all 1s ease-in-out 0.4s;
+	transition: all 1s ease-in-out 0.4s;
+}
+
+.ch-info p a {
+	display: block;
+	color: #404040;
+	color: rgba(255,255,255,0.7);
+	font-style: normal;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 9px;
+	letter-spacing: 1px;
+	padding-top: 4px;
+}
+
+.ch-info p a:hover {
+	color: #fff222;
+	color: rgba(255,242,34, 0.8);
+}
+
+.ch-item:hover {
+	box-shadow: 
+		inset 0 0 0 1px rgba(255,255,255,0.1),
+		0 1px 2px rgba(0,0,0,0.1);
+}
+.clickedbubble {
+	-webkit-transform: scale(1);
+	-moz-transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* ==========================================================================
+Contact
+========================================================================== */
+#contact{
+	width:100%;
+	height:100%;
+	background-color: #B76FD3;
+}
+.viewing-page-3 #navcontact::after{
+	content: "";
+	width: 60px;
+	height:8px;
+	background-color: #F96E5B;
+	position: absolute;
+	right:44%;
+	bottom:-3px;
+}
+.subscribe{
+	margin-top: 100px;
+	margin-bottom: 50px;
+}
+.legals{
+	padding-top: 10px;
+	width: 100%;
+	margin-bottom: 0;
+}
+.itemcontainer{
+	width:200px;
+	height: 50px;
+}
+.contactbox{
+	float: left;
+	background-color: #242830;
+	text-align: center;
+	border-radius: 8px;
+	padding: 5px;
+	width:70px;
+	height:50px;
+}
+.contacttext{
+	float: left;
+	color: white;
+	height: 50px;
+	width:130px;
+	padding: 12px;
+}
+.social{
+	margin-top: 60px;
+
+}
+.social-btn{
+	font-size: 2.5em;
+	-webkit-transition: all 0.5s ease-in-out;
+}
+.fa-twitter{
+	color:#F96E5B;
+}
+.fa-facebook{
+	color:#9B59B6;
+}
+.fa-linkedin{
+	color:#3DC9B3;
+}
+#b1{
+	opacity: 0;
+	margin-bottom: 10px;
+}
+#b2{
+	opacity: 0;
+	margin-bottom: 10px;
+}
+#b3{
+	opacity: 0;
+	margin-bottom: 10px;
+}
+#b4{
+	opacity: 0;
+	margin-bottom: 10px;
+}
+#b5{
+	opacity: 0;
+	margin-bottom: 10px;
+}
+
+.viewing-page-3 #b1{
+	-webkit-animation: fadeIn 1.5s 1s forwards;
+}
+.viewing-page-3 #b2{
+	-webkit-animation: fadeIn 1.5s 1.5s forwards;
+}
+.viewing-page-3 #b3{
+	-webkit-animation: fadeIn 1.5s 2s forwards;
+}
+.viewing-page-3 #b4{
+	-webkit-animation: fadeIn 1.5s 2.5s forwards;
+}
+.viewing-page-3 #b5{
+	-webkit-animation: fadeIn 1.5s 3s forwards;
+}
+.viewing-page-3 .navarch{
+	-webkit-animation:bounceIn 2s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
