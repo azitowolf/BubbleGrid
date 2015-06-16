@@ -14,8 +14,20 @@ $('#submit').click(function() {
   var numberOfCircles = $('#numberOfCircles').val();
   var circleRadii = $('#circleRadii').val();
   var circleRatio = $('#circleRatio').val();
+  $('#work').html(' ');
   bubbleGridPosition(circleRadii);
 })
+
+var createEquilateral = function(c1x, c1y, c2x, c2y) {
+  var newCircleX;
+  var newCircleY;
+
+  if (c1x = c2x) {
+    newCircleX = c1x + Math.sqrt(3) * radius;
+    newCircleY = c1y > c2y ? c1y - radius : c1y + radius
+  }
+
+}
 
 var bubbleGridPosition = function(radius) {
 
