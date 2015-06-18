@@ -18,25 +18,20 @@ $('#submit').click(function() {
   bubbleGridPosition(circleRadii);
 })
 
-var createEquilateral = function(c1x, c1y, c2x, c2y) {
-  var newCircleX;
-  var newCircleY;
-
-  if (c1x = c2x) {
-    newCircleX = c1x + Math.sqrt(3) * radius;
-    newCircleY = c1y > c2y ? c1y - radius : c1y + radius
-  }
-
-}
 
 var bubbleGridPosition = function(radius) {
 
   //establish circle sizes
   var diameter = radius * 2;
 
+  //build the array
+  var bubbleGrid = {};
+
   //build the starter circle
+
   var C1YPosition = fullheight / 2;
   var C1XPosition = fullwidth / 2;
+  bubbleGrid.push(c1:{x:C1XPosition, y:C1YPosition});
 
   //position bubbles
   var C2XPosition = (C1XPosition);
