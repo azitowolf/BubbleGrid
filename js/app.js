@@ -15,8 +15,9 @@
     var bubbleGrid = {};
     bubbleGrid = new BubbleGrid(circleRadii, 3);
     bubbleGrid.bubbleGridStart();
-    bubbleGrid.findThirdPoint(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[1]);
-    bubbleGrid.findThirdPoint(bubbleGrid.bubbleGrid[1], bubbleGrid.bubbleGrid[2]);
+    bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[1]);
+    bubbleGrid.addBubble(bubbleGrid.bubbleGrid[1], bubbleGrid.bubbleGrid[2]);
+    bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[2]);
 
     bubbleGrid.renderBubbleGrid($('#work'), circleRadii * 2);
   });

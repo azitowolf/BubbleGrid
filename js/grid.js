@@ -3,6 +3,7 @@ function BubbleGrid(radius, numCircles) {
   this.bubbleGrid = [];
   this.radius = radius;
   this.diameter = radius * 2;
+  var gridProperties = this;
 
 
   this.bubbleGridStart = function(radius) {
@@ -22,9 +23,10 @@ function BubbleGrid(radius, numCircles) {
 
   };
 
-  this.findThirdPoint = function(one, two) {
+  this.addBubble = function(one, two) {
 
     var newBub = {};
+
 
     if (one.x === two.x) {
       //default
@@ -53,7 +55,7 @@ function BubbleGrid(radius, numCircles) {
         //check for existing bubble on one side
         this.bubbleGrid.forEach(function(bubble) {
           if (bubble.x === newBub.x) {
-            newBub.y = two.y + this.diameter;
+            newBub.y = two.y + gridProperties.diameter;
             newBub.x = two.x;
           }
         });
@@ -64,7 +66,7 @@ function BubbleGrid(radius, numCircles) {
         //check for existing bubble on one side
         this.bubbleGrid.forEach(function(bubble) {
           if (bubble.x === newBub.x) {
-            newBub.y = two.y - this.diameter;
+            newBub.y = two.y - gridProperties.diameter;
             newBub.x = two.x;
           }
         });
@@ -79,8 +81,9 @@ function BubbleGrid(radius, numCircles) {
         //check for existing bubble on one side
         this.bubbleGrid.forEach(function(bubble) {
           if (bubble.x === newBub.x) {
-            newBub.y = two.y + this.diameter;
+            newBub.y = two.y + gridProperties.diameter;
             newBub.x = two.x;
+
           }
         });
 
@@ -90,8 +93,9 @@ function BubbleGrid(radius, numCircles) {
         //check for existing bubble on one side
         this.bubbleGrid.forEach(function(bubble) {
           if (bubble.x === newBub.x) {
-            newBub.y = two.y - this.diameter;
+            newBub.y = two.y - gridProperties.diameter;
             newBub.x = two.x;
+
           }
         });
       }
