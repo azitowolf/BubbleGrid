@@ -12,12 +12,19 @@
     var circleRadii = $('#circleRadii').val();
     var circleRatio = $('#circleRatio').val();
     $('#work').html(' ');
-    var bubbleGrid = {};
-    bubbleGrid = new BubbleGrid(circleRadii, 3);
-    bubbleGrid.bubbleGridStart();
-    bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[1]);
-    bubbleGrid.addBubble(bubbleGrid.bubbleGrid[1], bubbleGrid.bubbleGrid[2]);
-    bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[2]);
+    bg = BubbleGridInit(circleRadii, numberOfCircles);
+    _bubbleGridStart();
+    _addBubble();
+    _addBubble();
+    _addBubble();
+    _addBubble();
+    _addBubble();
+    _addBubble();
+    _addBubble();
+    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[1], bubbleGrid.bubbleGrid[2]);
+    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[2]);
+    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[5], bubbleGrid.bubbleGrid[0]);
+    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[2], bubbleGrid.bubbleGrid[5]);
 
-    bubbleGrid.renderBubbleGrid($('#work'), circleRadii * 2);
+    _renderBubbleGrid($('#work'), circleRadii*2);
   });
