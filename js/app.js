@@ -20,11 +20,11 @@
     _addBubble();
     _addBubble();
     _addBubble();
-    _addBubble();
+    // _addBubble();
     // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[1], bubbleGrid.bubbleGrid[2]);
     // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[2]);
     // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[5], bubbleGrid.bubbleGrid[0]);
     // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[2], bubbleGrid.bubbleGrid[5]);
 
-    _renderBubbleGrid($('#work'), circleRadii*2);
+    _renderBubbleGrid($('#work'), circleRadii * 2);
   });

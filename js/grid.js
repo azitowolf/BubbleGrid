@@ -21,29 +21,45 @@ function BubbleGridInit(radius, numCircles) {
 
   };
 
-//NEEDS TO NOT ADD BUBBLE IF BOTH SIDES FILLED
+  //NEEDS TO NOT ADD BUBBLE IF BOTH SIDES FILLED
 
   _addBubble = function() {
 
-    var one = bubbleGrid[c1];
-    var two = bubbleGrid[c2];
+    var one = bubbleGrid[0];
+    var two = bubbleGrid[1];
 
     var newBub = {};
 
     if (one.x === two.x) {
-      //default
-      newBub.x = one.x + Math.sqrt(3) * radius;
-      //check for existing bubble on one side
-      bubbleGrid.forEach(function(bubble) {
-        if (bubble.x === newBub.x) {
-          newBub.x = one.x - Math.sqrt(3) * radius;
-        }
-      });
-
+      //middle set Y
       if (one.y > two.y) {
         newBub.y = one.y - radius;
       } else {
         newBub.y = two.y - radius;
+      }
+
+      var right = false;
+      var left = false;
+      //check for existing bubble on one side
+      bubbleGrid.forEach(function(bubble) {
+
+        if (bubble.x === one.x - Math.sqrt(3) * radius) {
+
+          left = true;
+        } else if (bubble.x === one.x + Math.sqrt(3) * radius) {
+
+          right = true;
+        }
+      });
+
+      if (right && !left) {
+        newBub.x = one.x - Math.sqrt(3) * radius;
+        bubbleGrid.push(newBub);
+      } else if (left && !right) {
+        newBub.x = one.x + Math.sqrt(3) * radius;
+        bubbleGrid.push(newBub);
+      } else {
+        return;
       }
 
       //case they are not vertically aligned
@@ -104,12 +120,12 @@ function BubbleGridInit(radius, numCircles) {
     }
 
     //push out new bubble
-    bubbleGrid.push(newBub);
+    // bubbleGrid.push(newBub);
 
   };
 
-  _renderTill = function(numCircles){
-    while(bubbleGrid.length > numCircles){
+  _renderTill = function(numCircles) {
+    while (bubbleGrid.length > numCircles) {
 
     }
   };
@@ -125,6 +141,6 @@ function BubbleGridInit(radius, numCircles) {
     });
   };
 
-return bubbleGrid;
+  return bubbleGrid;
 
 };
