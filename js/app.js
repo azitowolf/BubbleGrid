@@ -14,17 +14,10 @@
     $('#work').html(' ');
     bg = BubbleGridInit(circleRadii, numberOfCircles);
     _bubbleGridStart();
-    _addBubble();
-    _addBubble();
-    _addBubble();
-    _addBubble();
-    _addBubble();
-    _addBubble();
-    // _addBubble();
-    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[1], bubbleGrid.bubbleGrid[2]);
-    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[0], bubbleGrid.bubbleGrid[2]);
-    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[5], bubbleGrid.bubbleGrid[0]);
-    // bubbleGrid.addBubble(bubbleGrid.bubbleGrid[2], bubbleGrid.bubbleGrid[5]);
+    _addBubble(0, 1);
+    _addBubble(0, 2);
+    _addBubble(2, 1);
+
 
     _renderBubbleGrid($('#work'), circleRadii * 2);
   });

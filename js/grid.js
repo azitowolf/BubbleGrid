@@ -21,16 +21,34 @@ function BubbleGridInit(radius, numCircles) {
 
   };
 
-  //NEEDS TO NOT ADD BUBBLE IF BOTH SIDES FILLED
+  orientation = function(one, two) {
+    var O = "";
+    if (one.x === two.x) {
+      O = 'verticallyAligned';
+    } else {
+      if (one.y > two.y) {
+        O = 'diagonalDown';
+      } else {
+        O = 'diagonalUp';
+      }
+    }
+    console.log(O);
+    return O;
+  };
 
-  _addBubble = function() {
+  _addBubble = function(index1, index2) {
 
-    var one = bubbleGrid[0];
-    var two = bubbleGrid[1];
+    var one = bubbleGrid[index1];
+    var two = bubbleGrid[index2];
 
     var newBub = {};
 
-    if (one.x === two.x) {
+    var right = false;
+    var left = false;
+
+    orientation(one, two);
+
+    if (orientation(one, two) === 'verticallyAligned') {
       //middle set Y
       if (one.y > two.y) {
         newBub.y = one.y - radius;
@@ -38,16 +56,12 @@ function BubbleGridInit(radius, numCircles) {
         newBub.y = two.y - radius;
       }
 
-      var right = false;
-      var left = false;
-      //check for existing bubble on one side
+
+      //check for existing bubbles around current set
       bubbleGrid.forEach(function(bubble) {
-
         if (bubble.x === one.x - Math.sqrt(3) * radius) {
-
           left = true;
         } else if (bubble.x === one.x + Math.sqrt(3) * radius) {
-
           right = true;
         }
       });
@@ -62,71 +76,69 @@ function BubbleGridInit(radius, numCircles) {
         return;
       }
 
-      //case they are not vertically aligned
-    } else if (one.x > two.x) {
+    } else if (orientation(one, two) === 'diagonalUp') {
+      //find out which input is right and which is left
+      var bottom;
+      var top;
+      one.x > two.x ? bottom = one : bottom = two;
+      one.x > two.x ? top = two : top = one;
 
-      if (one.y > two.y) {
-
-        newBub.y = one.y - diameter;
-        newBub.x = one.x;
-
-        //check for existing bubble on one side
-        bubbleGrid.forEach(function(bubble) {
-          if (bubble.x === newBub.x) {
-            newBub.y = two.y + diameter;
-            newBub.x = two.x;
-          }
-        });
-
+      //check for existing bubbles around current set
+      bubbleGrid.forEach(function(bubble) {
+        if (bubble.x === top.x && bubble.y === top.y - diameter) {
+          right = true;
+        } else if (bubble.x === bottom.x && bubble.y === bottom.y + diameter) {
+          left = true;
+        }
+      });
+      if (right && !left) {
+        newBub.y = bottom.y + diameter;
+        newBub.x = bottom.x;
+        bubbleGrid.push(newBub);
+      } else if (left && !right) {
+        newBub.y = top.y - diameter;
+        newBub.x = top.x;
+        bubbleGrid.push(newBub);
       } else {
-        newBub.y = one.y + diameter;
-        newBub.x = one.x;
-        //check for existing bubble on one side
-        bubbleGrid.forEach(function(bubble) {
-          if (bubble.x === newBub.x) {
-            newBub.y = two.y - diameter;
-            newBub.x = two.x;
-          }
-        });
+        return;
       }
-    } else if (two.x > one.x) {
 
-      if (one.y > two.y) {
+    } else if (orientation(one, two) === 'diagonalDown') {
 
-        newBub.y = one.y - diameter;
-        newBub.x = one.x;
+      var bottom2;
+      var top2;
 
-        //check for existing bubble on one side
-        bubbleGrid.forEach(function(bubble) {
-          if (bubble.x === newBub.x) {
-            newBub.y = two.y + diameter;
-            newBub.x = two.x;
-
-          }
-        });
-
-      } else if (two.y > one.y) {
-        newBub.y = one.y + diameter;
-        newBub.x = one.x;
-        //check for existing bubble on one side
-        bubbleGrid.forEach(function(bubble) {
-          if (bubble.x === newBub.x) {
-            newBub.y = two.y - diameter;
-            newBub.x = two.x;
-
-          }
-        });
-      }
+      one.x > two.x ? bottom2 = two : bottom2 = one;
+      one.x > two.x ? top2 = one : top2 = two;
+      debugger;
+      //check for existing bubbles around current set
+      bubbleGrid.forEach(function(bubble) {
+        if (bubble.x === top2.x && bubble.y === top2.y - diameter) {
+          right = true;
+        } else if (bubble.x === bottom2.x && bubble.y === bottom2.y + diameter) {
+          left = true;
+        }
+      });
+      if (right && !left) {
+        newBub.y = bottom2.y + diameter;
+        newBub.x = bottom2.x;
+        bubbleGrid.push(newBub);
+      } else if (left && !right) {
+        newBub.y = top2.y - diameter;
+        newBub.x = top2.x;
+        bubbleGrid.push(newBub);
+      } else {
+        return;
+      } // End Diagonal Down
     }
-
-    //push out new bubble
-    // bubbleGrid.push(newBub);
-
-  };
+  }; // End addBubble function
 
   _renderTill = function(numCircles) {
-    while (bubbleGrid.length > numCircles) {
-
+    while (bubbleGrid.length < numCircles) {
+      var one = bubbleGrid[0];
+      var two = bubbleGrid[1];
+      _addBubble(one, two);
+      one += 1;
     }
   };
 
